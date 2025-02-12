@@ -74,15 +74,15 @@ company_manager/
 │           └── invoice_confirm_delete.html
 └── analytics/
     ├── __init__.py
-        ├── apps.py
-            ├── urls.py
-                ├── views.py
-                    └── templates/
-                            └── analytics/
-                                        └── dashboard.html
-                                                    
-                                                    And a global base template in (for example) a “templates” folder (or in each app as needed):
+    ├── apps.py
+    ├── urls.py
+    ├── views.py
+    └── templates/
+           └── analytics/
+                   └── dashboard.html
+                   
+And a global base template in (for example) a “templates” folder (or in each app as needed):
 
-                                                    templates/
-                                                    └── base.html
+templates/
+└── base.html
                                                     
