@@ -1,5 +1,6 @@
 # company-manager
 
+FILE STRUCTURE
 company_manager/
 ├── manage.py
 ├── company_manager/
