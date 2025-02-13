@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Order Details</h2>
+    <p><strong>Customer:</strong> {{ object.customer_name }}</p>
+    <p><strong>Status:</strong> {{ object.status }}</p>
+    <p><strong>Date:</strong> {{ object.order_date }}</p>
+          
+    <h3>Items:</h3>
+    <ul>
+        {% for item in object.items.all %}
+            <li>{{ item.inventory_item.name }} – Quantity: {{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'orders:list' %}" class="btn btn-secondary">Back to Orders</a>
+{% endblock %}                                
