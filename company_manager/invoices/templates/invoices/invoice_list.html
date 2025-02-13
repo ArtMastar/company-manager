@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Invoices</h2>
+    <a href="{% url 'invoices:create' %}" class="btn btn-success mb-3">Create New Invoice</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Order</th>
+                <th>Total Amount</th>
+                <th>Due Date</th>
+                <th>Paid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for invoice in invoices %}
+            <tr>
+                <td>{{ invoice.id }}</td>
+                    <td>Order #{{ invoice.order.id }}</td>
+                    <td>{{ invoice.total_amount }}</td>
+                    <td>{{ invoice.due_date }}</td>
+                    <td>{{ invoice.paid }}</td>
+                <td>
+                    <a href="{% url 'invoices:detail' invoice.pk %}" class="btn btn-info btn-sm">View</a>
+                    <a href="{% url 'invoices:update' invoice.pk %}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{% url 'invoices:delete' invoice.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}                                                                                                                                                                                                  
