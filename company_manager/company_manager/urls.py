@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,4 +10,5 @@ urlpatterns = [
     path('payments/', include('payments.urls', namespace='payments')),
     path('invoices/', include('invoices.urls', namespace='invoices')),
     path('analytics/', include('analytics.urls', namespace='analytics')),
+    path('', lambda request: redirect('accounts:dashboard')),
 ]
