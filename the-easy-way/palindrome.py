@@ -9,3 +9,4 @@ if ispalindrome(word):
     print("It is a palindrome")
 else:
     print("It is not a palindrome")
+    # here we have created a function and defined it using the def keyword
